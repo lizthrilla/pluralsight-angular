@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-events-list',
+  // templateUrl:
   template: `
     <div>
       <h1>Upcoming Angular Events</h1>
@@ -11,7 +12,12 @@ import { Component } from '@angular/core';
         <app-event-thumbnail [event]="event1" ></app-event-thumbnail>
       </div>
     </div>
-  `
+  `,
+  // stylesUrl
+  // styles are scoped so even if you have the same class in multiple components, it won't affect those components if you don't add it to that scopped component
+  styles: [`
+    .well div { color: #bbb; }
+  `]
 })
 export class EventsListComponent {
   event1 = {
