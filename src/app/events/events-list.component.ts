@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       <hr />
       <!-- {{...}} === one way binding-->
       <div class="well hoverwell thumbnail">
-        <app-event-thumbnail [event]="event1" (eventClick)="handleEventClicked($event)" ></app-event-thumbnail>
+        <app-event-thumbnail [event]="event1" ></app-event-thumbnail>
       </div>
     </div>
   `
@@ -27,8 +27,4 @@ export class EventsListComponent {
       country: "England"
     }
   };
-
-  handleEventClicked = (data) => {
-    console.log(`received: ${data}`)
-  }
 }
