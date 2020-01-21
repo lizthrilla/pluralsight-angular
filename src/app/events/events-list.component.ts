@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
       <hr />
       <!-- {{...}} === one way binding-->
       <div class="well hoverwell thumbnail">
-        <app-event-thumbnail [event]="event1" ></app-event-thumbnail>
+        <!--  #thumbnail is making it a 'variable' aka it's giving it an id that we are then calling elsewhere-->
+        <app-event-thumbnail #thumbnail [event]="event1" ></app-event-thumbnail>
+        <h3>{{thumbnail.someProperty}}</h3>
+        <button class='btn btn-primary' (click)="thumbnail.logFoo()">Log</button>
       </div>
     </div>
   `
