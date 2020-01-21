@@ -2,14 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { EventsAppComponent } from './events-app.component';
-import { EventsListComponent } from './events/events-list.component';
-import { EventThumbnailComponent } from './events/event-thumbnail.component';
+// tslint:disable-next-line: quotemark
+import { EventsListComponent, EventThumbnailComponent } from "../app/events";
+import { NavBarComponent } from './nav/nav-bar.component';
 
 @NgModule({
   declarations: [
     EventsAppComponent,
     EventsListComponent,
-    EventThumbnailComponent
+    EventThumbnailComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule

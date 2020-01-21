@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-events-list',
   // templateUrl:
@@ -14,6 +13,7 @@ import { Component } from '@angular/core';
     </div>
   `,
   // stylesUrl
+  // tslint:disable-next-line: max-line-length
   // styles are scoped so even if you have the same class in multiple components, it won't affect those components if you don't add it to that scopped component
   styles: [`
     .well div { color: #bbb; }
