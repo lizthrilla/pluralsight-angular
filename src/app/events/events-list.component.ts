@@ -29,6 +29,6 @@ export class EventsListComponent {
   };
 
   handleEventClicked = (data) => {
-    console.log(`received ${data}`)
+    console.log(`received: ${data}`)
   }
 }
