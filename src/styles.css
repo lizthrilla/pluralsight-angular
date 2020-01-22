@@ -1,12 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import "~bootstrap/dist/css/bootstrap.css"; */
 
-body {
-  background-color: #555;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .hoverwell:hover {
   background-color: #485563;
   cursor: pointer;
