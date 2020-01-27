@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from './shared/event.service';
+import {ToastrService } from '../common/toastr.serveice';
 
 // need to declare toastr as a variable
 declare let toastr;
 @Component({
-  selector: 'app-events-list',
-  // templateUrl:
   template: `
     <div>
       <h1>Upcoming Angular Events</h1>
@@ -41,7 +40,7 @@ declare let toastr;
 export class EventsListComponent implements OnInit {
   events: any[];
   // private is shorthand for saying we have a property on our class see below class for example of non private
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, private toastr: ToastrService) {
     // potentially long running calls shouldn't be in a constructor and this will be an api call soon
     // kind of like a callback in useEffect
     // this.events = this.eventService.getEvents();
@@ -55,7 +54,7 @@ export class EventsListComponent implements OnInit {
   }
 
   handleThumbnailClick = (eventName) => {
-    toastr.success(eventName);
+    this.toastr.success(eventName);
   }
 }
 
