@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   <div>
     <h2>{{ event?.name }}</h2>
     <div>Date: {{event?.date}}</div>
-    <div [ngSwitch]="event?.time">
+    <div [ngClass]="getStartTimeClass()" [ngSwitch]="event?.time">
       Time: {{event?.time}}
       <!-- ngSwitchCase can be any data type but needs to match up with the ngSwitch data type -->
       <span *ngSwitchCase="'8:00 am'">  (Early Start)</span>
@@ -24,11 +24,19 @@ import { Component, Input } from '@angular/core';
   </div>
   `,
   styles: [`
+    .green { color: #003300 !important;}
     .pad-left {margin-left: 10px;}
+    .bold { font-weight: bold; }
   `]
 })
 
 export class EventThumbnailComponent {
   @Input() event: any;
 
+  getStartTimeClass = () => {
+    if (this.event && this.event.time === '8:00 am') {
+      return ['green', 'bold'];
+    }
+    return '';
+  }
 }

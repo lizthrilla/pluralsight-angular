@@ -5,17 +5,17 @@ import { EventsAppComponent } from './events-app.component';
 // tslint:disable-next-line: quotemark
 import { EventsListComponent, EventThumbnailComponent } from "../app/events";
 import { NavBarComponent } from './nav/nav-bar.component';
+import { EventService } from './events/shared/event.service';
 
 @NgModule({
+  imports: [BrowserModule],
   declarations: [
     EventsAppComponent,
     EventsListComponent,
     EventThumbnailComponent,
     NavBarComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  providers: [EventService],
   bootstrap: [EventsAppComponent]
 })
-export class AppModule { }
+export class AppModule {}
