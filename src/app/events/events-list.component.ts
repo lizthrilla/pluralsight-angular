@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from './shared/event.service';
+
+// need to declare toastr as a variable
+declare let toastr;
 @Component({
   selector: 'app-events-list',
   // templateUrl:
@@ -12,7 +15,10 @@ import { EventService } from './shared/event.service';
           <div class="col-md-5" *ngFor="let event of events">
             <!-- structional element has a * and adds ore removes an element -->
             <!-- let event of events is a ngFor only thing -->
-            <app-event-thumbnail class="hoverwell thumbnail" [event]="event"></app-event-thumbnail>
+            <app-event-thumbnail
+              class="hoverwell thumbnail"
+              (click)="handleThumbnailClick(event.name)"
+              [event]="event"></app-event-thumbnail>
 
           </div>
         </div>
@@ -46,6 +52,10 @@ export class EventsListComponent implements OnInit {
   // also cannot write it as an arrow function
   ngOnInit() {
     this.events = this.eventService.getEvents();
+  }
+
+  handleThumbnailClick = (eventName) => {
+    toastr.success(eventName);
   }
 }
 
